@@ -1,0 +1,6 @@
+.git/
+.tmp_*/
+.vercel/
+.env*
+3D.html
+
