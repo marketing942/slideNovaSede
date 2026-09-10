@@ -52,6 +52,18 @@ body{font-family:'Barlow',system-ui,sans-serif;-webkit-font-smoothing:antialiase
 .slide.live{display:flex}
 .slide::before{content:'';position:absolute;inset:0;z-index:-2}
 
+/* ============ SLIDE DE VÍDEO ============ */
+.video-slide{padding:0;background:#020307;align-items:center;justify-content:center}
+.video-slide::before{display:none}
+.video-poster{position:absolute;inset:-5%;width:110%;height:110%;object-fit:cover;filter:blur(30px) brightness(.28) saturate(.85);transform:scale(1.08);z-index:-1}
+.video-slide::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 42% 90% at 50% 50%,transparent 15%,rgba(1,3,9,.46) 68%,rgba(0,0,0,.88) 100%);z-index:0;pointer-events:none}
+.video-frame{position:relative;height:100vh;max-height:100vh;aspect-ratio:9/16;z-index:2;background:#000;box-shadow:0 0 80px rgba(0,0,0,.88),0 0 0 1px rgba(201,162,39,.3)}
+.video-frame video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
+body:has(.video-slide.live) .rail{display:none}
+body:has(.video-slide.live) .nav{bottom:auto;top:18px;opacity:.68}
+body:has(.video-slide.live) .hud,
+body:has(.video-slide.live) .corner{display:none}
+
 .bg-void::before{background:radial-gradient(ellipse 90% 70% at 50% 28%,#0d1733 0%,#070b18 55%,#020309 100%),
   radial-gradient(ellipse 60% 40% at 50% 4%,rgba(201,162,39,.10) 0%,transparent 70%)}
 .bg-ash::before{background:radial-gradient(ellipse 110% 90% at 18% 22%,#16224a 0%,#0c1226 48%,#03040a 100%)}
@@ -724,7 +736,15 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 06 EMPREENDEDORISMO -->
+<!-- 06 VÍDEO -->
+<section class="slide video-slide" data-t="dissolve" data-ph="0">
+  <img class="video-poster" src="videoslide-poster.jpg" alt="" aria-hidden="true">
+  <div class="video-frame">
+    <video data-slide-video src="videoslide.mp4" poster="videoslide-poster.jpg" preload="metadata" playsinline controls autoplay aria-label="Vídeo institucional do Colégio CPPEM"></video>
+  </div>
+</section>
+
+<!-- 07 EMPREENDEDORISMO -->
 <section class="slide bg-ash-r center" data-t="dissolve" data-ph="0">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -735,7 +755,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 07 DIVISOR 02 -->
+<!-- 08 DIVISOR 02 -->
 <section class="slide bg-dust-r divider" data-t="wipe" data-ph="1">
   <div class="cine-light"></div>
   <div class="wrap">
@@ -745,7 +765,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 08 NOVO ENDEREÇO -->
+<!-- 09 NOVO ENDEREÇO -->
 <section class="slide bg-steel location-slide" data-t="split" data-ph="1">
   <div class="cine-light"></div>
   <div class="wrap location-layout">
@@ -770,7 +790,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 09 MAPA EM ESCALA -->
+<!-- 10 MAPA EM ESCALA -->
 <section class="slide bg-noir center impact-image-slide" data-t="iris" data-ph="1">
   <div class="cine-light"></div>
   <figure class="impact-visual map-scale" data-a="1">
@@ -779,7 +799,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </figure>
 </section>
 
-<!-- 10 PRÉ-PLANTA -->
+<!-- 11 PRÉ-PLANTA -->
 <section class="slide bg-noir center" data-t="rise" data-ph="1">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -798,7 +818,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 11 CAMPUS EM ESCALA -->
+<!-- 12 CAMPUS EM ESCALA -->
 <section class="slide bg-void center impact-image-slide" data-t="dissolve" data-ph="1">
   <div class="cine-light"></div>
   <figure class="impact-visual campus-scale" data-a="1">
@@ -807,7 +827,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </figure>
 </section>
 
-<!-- 12 PLANO DE EXECUÇÃO -->
+<!-- 13 PLANO DE EXECUÇÃO -->
 <section class="slide bg-ash center execution-slide" data-t="push" data-ph="1">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -827,7 +847,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 13 VISÃO 3D DETALHADA -->
+<!-- 14 VISÃO 3D DETALHADA -->
 <section class="slide bg-noir center model-showcase-slide" data-t="iris" data-ph="1">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -839,7 +859,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 14 COMPARAÇÃO DE VALOR -->
+<!-- 15 COMPARAÇÃO DE VALOR -->
 <section class="slide bg-ember center car-slide" data-t="glitch" data-ph="1">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -860,7 +880,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 15 MENSALIDADES -->
+<!-- 16 MENSALIDADES -->
 <section class="slide bg-ash-r center tuition-slide" data-t="rise" data-ph="1">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -896,7 +916,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 16 BOLSA ATLETA -->
+<!-- 17 BOLSA ATLETA -->
 <section class="slide bg-hex center athlete-slide" data-t="split" data-ph="1">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -951,7 +971,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 17 CONDIÇÃO ESPECIAL -->
+<!-- 18 CONDIÇÃO ESPECIAL -->
 <section class="slide bg-void center" data-t="dissolve" data-ph="1">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -962,7 +982,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 18 DIVISOR 03 -->
+<!-- 19 DIVISOR 03 -->
 <section class="slide bg-dust divider" data-t="wipeup" data-ph="2">
   <div class="cine-light"></div>
   <div class="wrap">
@@ -972,7 +992,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 19 PERTENCIMENTO -->
+<!-- 20 PERTENCIMENTO -->
 <section class="slide bg-hex center" data-t="split" data-ph="2">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -983,7 +1003,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 20 CLUBE CPPEM -->
+<!-- 21 CLUBE CPPEM -->
 <section class="slide bg-void center" data-t="iris" data-ph="2">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -995,7 +1015,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 21 CONVOCAÇÃO FINAL -->
+<!-- 22 CONVOCAÇÃO FINAL -->
 <section class="slide bg-ash center call-to-action-slide" data-t="rise" data-ph="2">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -1013,7 +1033,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 22 FRASE -->
+<!-- 23 FRASE -->
 <section class="slide bg-void center" data-t="zoom" data-ph="2">
   <div class="cine-light"></div>
   <div class="wrap">
@@ -1021,7 +1041,7 @@ body:has(.athlete-slide.live) .c4{bottom:12px}
   </div>
 </section>
 
-<!-- 23 OFERTA FINAL -->
+<!-- 24 OFERTA FINAL -->
 <section class="slide bg-ember center offer-final" data-t="zoom" data-ph="2">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -1223,6 +1243,13 @@ const CONFIG = {
   }
   function activate(s){
     runCounters(s);
+    s.querySelectorAll('video[data-slide-video]').forEach(function(video){
+      try{ video.currentTime = 0; }catch(e){}
+      video.muted = false;
+      video.volume = 1;
+      var playback = video.play();
+      if(playback && playback.catch) playback.catch(function(){});
+    });
     s.querySelectorAll('iframe[data-html]').forEach(function(model3d){
       if(model3d.dataset.loaded) return;
       var raw=atob(model3d.dataset.html), bytes=new Uint8Array(raw.length);
@@ -1235,6 +1262,7 @@ const CONFIG = {
 
   function go(n){
     if(n < 0 || n >= tot) return;
+    slides[i].querySelectorAll('video[data-slide-video]').forEach(function(video){ video.pause(); });
     slides[i].classList.remove('live','settled');
     i = n;
     var s = slides[i];
