@@ -296,7 +296,14 @@ h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:1.2;
 .athlete-criteria{list-style:none;display:grid;gap:8px}
 .athlete-criteria li{position:relative;padding-left:16px;font:400 clamp(13px,1.05vw,16px)/1.35 'Barlow',sans-serif;color:#d1ccbf}
 .athlete-criteria li::before{content:'+';position:absolute;left:0;color:var(--fog);font-weight:700}
-.athlete-foot{font:500 11px 'Share Tech Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#9fa5b0;margin-top:12px}
+.athlete-maintenance{width:100%;margin-top:10px;padding:14px 18px 16px;border-top:1px solid rgba(201,162,39,.46);
+  background:linear-gradient(90deg,rgba(201,162,39,.07),rgba(31,61,124,.16),rgba(201,162,39,.07));text-align:left}
+.athlete-maintenance h3{font:700 11px 'Share Tech Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--fog);margin-bottom:11px;text-align:center}
+.maintenance-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.maintenance-item{position:relative;padding:0 14px 0 28px;border-left:1px solid rgba(201,162,39,.18);
+  font:400 clamp(11.5px,.9vw,14px)/1.35 'Barlow',sans-serif;color:#d4cfc3}
+.maintenance-item:first-child{border-left:0}
+.maintenance-item::before{content:'✓';position:absolute;left:10px;top:0;color:var(--fog);font-weight:700}
 @media(max-width:900px){.athlete-programs{grid-template-columns:1fr}.athlete-program{min-height:auto}.athlete-slide{overflow:auto}}
 
 /* ============ CARDS3 (kcard) ============ */
@@ -910,7 +917,16 @@ h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:1.2;
         </ul>
       </article>
     </div>
-    <p class="athlete-foot" data-a="4">Concessão condicionada à análise e ao cumprimento contínuo dos critérios.</p>
+    <div class="athlete-maintenance" data-a="4">
+      <h3>Critérios para manutenção da bolsa</h3>
+      <div class="maintenance-grid">
+        <div class="maintenance-item">Frequência escolar adequada</div>
+        <div class="maintenance-item">Cumprimento das atividades acadêmicas</div>
+        <div class="maintenance-item">Disciplina e respeito às normas do Colégio CPPEM</div>
+        <div class="maintenance-item">Participação esportiva comprovada, com matrícula em centro de treinamento</div>
+        <div class="maintenance-item">Representação do colégio em eventos e competições quando solicitado</div>
+      </div>
+    </div>
   </div>
 </section>
 
