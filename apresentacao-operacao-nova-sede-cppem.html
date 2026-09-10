@@ -275,6 +275,30 @@ h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:1.2;
   font:400 clamp(13px,1.15vw,17px) 'Barlow',sans-serif}
 .athlete-note b{color:var(--bone)}
 
+/* ============ BOLSA ATLETA ============ */
+.athlete-slide{justify-content:flex-start;padding-top:clamp(60px,7vh,84px)}
+.athlete-slide .wrap{max-width:1460px;gap:10px}
+.athlete-slide h2{font-size:clamp(44px,4.5vw,74px);line-height:.94;margin-bottom:8px}
+.athlete-programs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;width:100%;margin-top:12px;text-align:left}
+.athlete-program{position:relative;min-height:330px;border:1px solid rgba(201,162,39,.3);padding:24px 24px 22px;
+  background:linear-gradient(155deg,rgba(31,61,124,.26),rgba(2,4,10,.52) 68%);overflow:hidden}
+.athlete-program::before{content:attr(data-level);position:absolute;right:16px;top:8px;font:900 92px/1 'Big Shoulders Display',Impact,sans-serif;
+  color:rgba(201,162,39,.055);letter-spacing:-.04em}
+.athlete-program.elite{border-color:var(--fog);background:linear-gradient(155deg,rgba(201,162,39,.16),rgba(2,4,10,.58) 70%);
+  box-shadow:0 20px 55px rgba(0,0,0,.34)}
+.athlete-tier{font:700 11px 'Share Tech Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--fog);margin-bottom:12px}
+.athlete-program h3{font-size:clamp(27px,2.3vw,38px);line-height:1;color:var(--bone);max-width:82%;margin-bottom:20px}
+.athlete-award{display:flex;align-items:flex-end;gap:12px;padding-bottom:18px;border-bottom:1px solid rgba(201,162,39,.2);margin-bottom:17px}
+.athlete-percent{font:900 clamp(50px,4.4vw,72px)/.85 'Big Shoulders Display',Impact,sans-serif;color:var(--fog)}
+.athlete-percent.textual{font-size:clamp(30px,2.7vw,44px);line-height:.9;max-width:220px}
+.athlete-vacancies{font:700 10px/1.45 'Share Tech Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#b9b2a5;padding-bottom:3px}
+.athlete-criteria-title{font:700 10px 'Share Tech Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);margin-bottom:9px}
+.athlete-criteria{list-style:none;display:grid;gap:8px}
+.athlete-criteria li{position:relative;padding-left:16px;font:400 clamp(13px,1.05vw,16px)/1.35 'Barlow',sans-serif;color:#d1ccbf}
+.athlete-criteria li::before{content:'+';position:absolute;left:0;color:var(--fog);font-weight:700}
+.athlete-foot{font:500 11px 'Share Tech Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#9fa5b0;margin-top:12px}
+@media(max-width:900px){.athlete-programs{grid-template-columns:1fr}.athlete-program{min-height:auto}.athlete-slide{overflow:auto}}
+
 /* ============ CARDS3 (kcard) ============ */
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.4vw,20px);width:100%}
 .kcard{border:1px solid rgba(201,162,39,.26);padding:clamp(16px,2vh,24px) clamp(14px,1.6vw,20px);text-align:left;
@@ -840,11 +864,57 @@ h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:1.2;
         <div class="tuition-row max"><span>Bolsa de 40%</span><strong>R$ 958,20</strong></div>
       </article>
     </div>
-    <p class="athlete-note" data-a="4"><b>Bolsa Atleta:</b> poderá chegar a 100%, conforme o cumprimento dos requisitos do programa.</p>
+    <p class="athlete-note" data-a="4"><b>Bolsa Atleta:</b> três categorias com critérios esportivos, acadêmicos e comportamentais.</p>
   </div>
 </section>
 
-<!-- 16 CONDIÇÃO ESPECIAL -->
+<!-- 16 BOLSA ATLETA -->
+<section class="slide bg-hex center athlete-slide" data-t="split" data-ph="1">
+  <div class="cine-light"></div>
+  <div class="wrap ctr">
+    <div class="eyebrow" data-a="1">Talento, disciplina e compromisso</div>
+    <h2 data-a="2">Bolsa Atleta</h2>
+    <p class="lead" data-a="2">Três caminhos para reconhecer quem transforma dedicação em desempenho.</p>
+    <div class="athlete-programs" data-a="3">
+      <article class="athlete-program elite" data-level="80">
+        <div class="athlete-tier">Categoria 01 · maior benefício</div>
+        <h3>Atleta de Elite</h3>
+        <div class="athlete-award"><strong class="athlete-percent">80%</strong><span class="athlete-vacancies">de bolsa<br>apenas 5 vagas</span></div>
+        <div class="athlete-criteria-title">Critérios</div>
+        <ul class="athlete-criteria">
+          <li>Resultados comprovados em competições oficiais estaduais ou nacionais</li>
+          <li>Liderança</li>
+          <li>Postura exemplar</li>
+        </ul>
+      </article>
+      <article class="athlete-program" data-level="60">
+        <div class="athlete-tier">Categoria 02 · alto rendimento</div>
+        <h3>Atleta de Performance</h3>
+        <div class="athlete-award"><strong class="athlete-percent">60%</strong><span class="athlete-vacancies">de bolsa<br>apenas 5 vagas</span></div>
+        <div class="athlete-criteria-title">Critérios</div>
+        <ul class="athlete-criteria">
+          <li>Participação em equipes oficiais</li>
+          <li>Evolução esportiva</li>
+          <li>Bom desempenho escolar</li>
+        </ul>
+      </article>
+      <article class="athlete-program" data-level="+">
+        <div class="athlete-tier">Categoria 03 · formação</div>
+        <h3>Atleta em Desenvolvimento</h3>
+        <div class="athlete-award"><strong class="athlete-percent textual">Conforme avaliação</strong></div>
+        <div class="athlete-criteria-title">Critérios</div>
+        <ul class="athlete-criteria">
+          <li>Dedicação aos treinamentos</li>
+          <li>Participação esportiva</li>
+          <li>Compromisso com os estudos</li>
+        </ul>
+      </article>
+    </div>
+    <p class="athlete-foot" data-a="4">Concessão condicionada à análise e ao cumprimento contínuo dos critérios.</p>
+  </div>
+</section>
+
+<!-- 17 CONDIÇÃO ESPECIAL -->
 <section class="slide bg-void center" data-t="dissolve" data-ph="1">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -855,7 +925,7 @@ h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:1.2;
   </div>
 </section>
 
-<!-- 17 DIVISOR 03 -->
+<!-- 18 DIVISOR 03 -->
 <section class="slide bg-dust divider" data-t="wipeup" data-ph="2">
   <div class="cine-light"></div>
   <div class="wrap">
@@ -865,7 +935,7 @@ h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:1.2;
   </div>
 </section>
 
-<!-- 18 PERTENCIMENTO -->
+<!-- 19 PERTENCIMENTO -->
 <section class="slide bg-hex center" data-t="split" data-ph="2">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -876,7 +946,7 @@ h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:1.2;
   </div>
 </section>
 
-<!-- 19 CLUBE CPPEM -->
+<!-- 20 CLUBE CPPEM -->
 <section class="slide bg-void center" data-t="iris" data-ph="2">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -888,7 +958,7 @@ h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:1.2;
   </div>
 </section>
 
-<!-- 20 CONVOCAÇÃO FINAL -->
+<!-- 21 CONVOCAÇÃO FINAL -->
 <section class="slide bg-ash center call-to-action-slide" data-t="rise" data-ph="2">
   <div class="cine-light"></div>
   <div class="wrap ctr">
@@ -906,7 +976,7 @@ h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:1.2;
   </div>
 </section>
 
-<!-- 21 FRASE -->
+<!-- 22 FRASE -->
 <section class="slide bg-void center" data-t="zoom" data-ph="2">
   <div class="cine-light"></div>
   <div class="wrap">
@@ -914,7 +984,7 @@ h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:1.2;
   </div>
 </section>
 
-<!-- 22 OFERTA FINAL -->
+<!-- 23 OFERTA FINAL -->
 <section class="slide bg-ember center offer-final" data-t="zoom" data-ph="2">
   <div class="cine-light"></div>
   <div class="wrap ctr">
